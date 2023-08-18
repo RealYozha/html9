@@ -1,13 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-@supports(display: grid) {
-    .message {
-        display: none;
-    }
-    .section {
-        display: block;
-    }
-}
-
 body {
     width: 100%;
     height: 100%;
@@ -45,8 +36,95 @@ h1 {
     transition: transform 0.3s ease-in-out;
 }
 
-.item:nth-of-type(3n) {
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.item__details {
+    position: relative;
+    z-index: 1;
+    padding: 15px;
+    color: #444444;
+    background-color: #ffffff;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.item__details::before {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-right: 0.5em;
+    color: #444444;
+}
+
+.item-full:nth-of-type(1) {
     background-image: url(https://traveltimes.ru/wp-content/uploads/2021/10/grech2.jpg);
+}
+
+.item-large:nth-of-type(2) {
+    background-image: url(https://main-cdn.sbermegamarket.ru/hlr-system/173/480/400/711/116/29/100047626463b0.jpeg);
+}
+
+.item-large:nth-of-type(3) {
+    background-image: url(https://vostorg.buzz/uploads/posts/2022-04/1651080765_1-vostorg-buzz-p-zelenii-sup-s-frikadelkami-2.jpg);
+}
+
+.item-large:nth-of-type(4) {
+    background-image: url(https://montisbar.ru/wp-content/uploads/e/c/d/ecd31f2875790e1b68da46b16f9963cf.jpeg);
+}
+
+.item-large:nth-of-type(5) {
+    background-image: url(https://traveltimes.ru/wp-content/uploads/2021/10/grech2.jpg);
+}
+
+.item-medium:nth-of-type(6) {
+    background-image: url(https://webpulse.imgsmail.ru/imgpreview?mb=webpulse&key=pulse_cabinet-image-a8c7d7b1-eac1-4f61-9467-d36058c00272)
+}
+
+.item-medium:nth-of-type(7) {
+    background-image: url(https://www.syl.ru/misc/i/ni/1/2/4/4/7/5/2/i/1244752.jpg)
+}
+
+.item-medium:nth-of-type(8) {
+    background-image: url(https://s2.best-wallpaper.net/wallpaper/2560x1600/1712/Fried-fish-food-white-background_2560x1600.jpg)
+}
+
+.item-medium:nth-of-type(9) {
+    background-image: url(https://calorazh.ru/wp-content/uploads/2023/05/izobrazhenie_2023-05-15_201142948.png)
+}
+
+.item-medium:nth-of-type(10) {
+    background-image: url(https://montisbar.ru/wp-content/uploads/c/3/2/c3253d46685d6d4f2d5713c8420abfd9.jpeg)
+}
+
+.item-medium:nth-of-type(11) {
+    background-image: url(https://mangal-kafe.ru/wp-content/uploads/2022/03/14_5.jpg)
+}
+
+.item-medium:nth-of-type(12) {
+    background-image: url(https://sun9-37.userapi.com/impg/xULu0QiEn2G8KHq9o3IvDM4gGJYlgU0NDqwgtQ/hJyxWyzKhDg.jpg?size=800x600&quality=95&sign=15ca3db3ad68be9f89be1f8d59412714&c_uniq_tag=ZLwglVSgChMGQsjPWeEsl6K7qxu5ibZAoUTWxhUFzxI&type=album)
+}
+
+.item-medium:nth-of-type(13) {
+    background-image: url(https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663769369_14-mykaleidoscope-ru-p-pirog-moskovskii-yeda-vkontakte-14.jpg)
+}
+
+.item-medium:nth-of-type(14) {
+    background-image: url(https://mykaleidoscope.ru/uploads/posts/2021-09/1632239217_49-mykaleidoscope-ru-p-chizkeik-domashnii-krasivo-foto-53.jpg)
+}
+
+.item-medium:nth-of-type(15) {
+    background-image: url(https://almode.ru/uploads/posts/2021-12/1640591536_50-almode-ru-p-torti-50.jpg)
 }
 
 .item-full {
@@ -59,4 +137,27 @@ h1 {
 
 .item-medium {
     grid-row-end: span 2;
+}
+
+@media screen and (min-width: 768px) {
+    .section {
+        padding: 4rem;
+    }
+    s .item-full {
+        grid-column: 1/-1;
+        grid-row-end: span 2;
+    }
+    body,
+    html {
+        display: block;
+    }
+}
+
+@supports(display: grid) {
+    .section {
+        display: block;
+    }
+    .message {
+        display: none;
+    }
 }
